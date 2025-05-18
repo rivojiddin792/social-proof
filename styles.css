@@ -1,0 +1,265 @@
+@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@100..900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    border: none;
+    outline: none;
+    box-sizing: border-box;
+}
+
+:root {
+    --dark-magenta: hsl(300, 43%, 22%);
+    --soft-pink: hsl(333, 80%, 67%);
+    --dark-grayish-magenta: hsl(303, 10%, 53%);
+    --light-grayish-magenta: hsl(300, 24%, 96%);
+    --primary-font: "League Spartan";
+}
+
+body {
+    display: grid;
+    grid-template-columns: repeat(2, 500px);
+    grid-template-rows: 250px 235px;
+    justify-content: center;
+    align-content: center;
+    position: relative;
+    row-gap: 2rem;
+    width: 100vw;
+    min-height: 100vh;
+    font-family: var(--primary-font);
+}
+
+body>img {
+    object-fit: cover;
+    z-index: -1;
+}
+
+.top-pattern {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 40%;
+    height: auto;
+    transform: rotate(180deg);
+}
+
+.bottom-pattern {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 75%;
+    height: auto;
+}
+
+.mobile {
+    display: none;
+}
+
+.heading {
+    font-size: 3rem;
+    font-weight: 700;
+    color: var(--dark-magenta);
+}
+
+.description {
+    width: 80%;
+    margin-top: 28px;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 125%;
+    color: var(--dark-grayish-magenta);
+}
+
+.ratings>div {
+    display: flex;
+    align-items: center;
+    width: 80%;
+    height: 50px;
+    margin: 16px 0;
+    border-radius: 8px;
+    background-color: var(--light-grayish-magenta);
+}
+
+.ratings div:nth-child(2) {
+    margin-left: 10%;
+}
+
+.ratings div:nth-child(3) {
+    margin-left: 20%;
+}
+
+.rating {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    margin: 0 28px;
+}
+
+.rating img {
+    width: 14px;
+    height: auto;
+    margin: 0 3px;
+}
+
+.rating+p {
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--dark-magenta);
+}
+
+.reviews {
+    display: flex;
+    justify-content: space-between;
+    grid-column: 1 / -1;
+}
+
+.reviews>div {
+    width: 30%;
+    height: 195px;
+    padding: 28px;
+    border-radius: 4px;
+    background-color: var(--dark-magenta);
+}
+
+.reviews>div:nth-child(2) {
+    margin-top: 15px;
+}
+
+.reviews>div:nth-child(3) {
+    margin-top: 30px;
+}
+
+.author {
+    display: flex;
+}
+
+.author img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50px;
+}
+
+.info {
+    padding: 8px 0;
+    margin-left: 20px;
+}
+
+.name {
+    font-size: 14px;
+    font-family: 700;
+    color: white;
+}
+
+.name+p {
+    margin-top: 4px;
+    font-size: 14px;
+    font-weight: 300;
+    color: var(--soft-pink);
+}
+
+.review {
+    margin-top: 16px;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 160%;
+    color: var(--light-grayish-magenta);
+}
+
+@media only screen and (max-width: 1000px) {
+    body {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        min-height: 100vh;
+        padding: 5rem 0;
+        gap: 0;
+    }
+
+    body>div {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 325px;
+    }
+
+    .intro {
+        text-align: center;
+    }
+
+    .description {
+        width: 100%;
+    }
+
+    .ratings {
+        margin: 2rem 0;
+    }
+
+    .ratings>div {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        width: 100%;
+        height: 70px;
+        margin: 8px 0;
+    }
+
+    .rating {
+        height: 65%;
+        margin: 0;
+    }
+
+    .ratings div:nth-child(2),
+    .ratings div:nth-child(3) {
+        margin-left: 0;
+    }
+
+    .reviews>div {
+        width: 100%;
+        height: 210px;
+        margin: 12px 0;
+    }
+
+    .review {
+        font-size: 14px;
+    }
+
+    .reviews>div:nth-child(2),
+    .reviews>div:nth-child(3) {
+        margin-top: 0;
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    .mobile {
+        display: block;
+    }
+
+    .top-pattern {
+        width: 100%;
+        transform: none;
+    }
+
+    .bottom-pattern {
+        width: 100%;
+    }
+
+    .desktop {
+        display: none;
+    }
+}
+
+@media only screen and (max-width: 325px) {
+    body>div {
+        width: 90vw;
+    }
+
+    .heading {
+        font-size: 2.5rem;
+    }
+
+    .description {
+        font-size: 14px;
+    }
+}
